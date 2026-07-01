@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Backend env vars (contienen credenciales SMTP)
+server/.env
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

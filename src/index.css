@@ -118,6 +118,24 @@ main { display: flex; flex-direction: column; gap: 18px; }
 .contact-card { background: linear-gradient(145deg, rgba(17, 24, 39, 0.98), rgba(30, 41, 59, 0.85)); }
 .small-note { color: #bfdbfe; font-size: 0.95rem; }
 
+.contact-form { display: flex; flex-direction: column; gap: 6px; margin-top: 12px; }
+.contact-form label { font-size: 0.85rem; color: #bfdbfe; margin-top: 6px; }
+.contact-form input,
+.contact-form textarea {
+  font-family: inherit; font-size: 0.95rem; color: #eff6ff;
+  background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 12px; padding: 10px 12px; resize: vertical;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none; border-color: #8b5cf6; box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+}
+.contact-form button { margin-top: 10px; border: none; cursor: pointer; }
+.contact-form button:disabled { opacity: 0.6; cursor: not-allowed; }
+.form-feedback { margin: 6px 0 0; font-size: 0.9rem; }
+.form-feedback.success { color: #6ee7b7; }
+.form-feedback.error { color: #fca5a5; }
+
 @media (max-width: 1100px) {
   .hero, .grid-2, .grid-3, .project-grid, .timeline-grid { grid-template-columns: 1fr; }
 }

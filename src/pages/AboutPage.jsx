@@ -60,7 +60,9 @@ export default function AboutPage() {
       <section className="card">
         <p className="eyebrow">Currículum</p>
         <h2>Educación, práctica y trayectoria</h2>
-        <p className="small-note">Puedes descargar mi currículum completo para conocer más detalles de mi formación y experiencia.</p>
+        <p className="small-note">
+          Mi recorrido combina una base sólida en informática, experiencia práctica en proyectos reales y una forma de trabajar orientada a resolver problemas con soluciones claras, funcionales y escalables.
+        </p>
         <a className="button primary" href="/CV-Zimri-Lopez.pdf" download="CV-Zimri-Lopez.pdf">
           Descargar currículum
         </a>
@@ -68,17 +70,18 @@ export default function AboutPage() {
           <div>
             <h3>Educación</h3>
             <ul>
-              <li>Centro Educativo Técnico Laboral Kinal</li>
-              <li>6to Perito en Informática</li>
-              <li>Enfoque en desarrollo web, móvil y programación lógica</li>
+              <li>6to Perito en Informática, con formación enfocada en programación, lógica computacional y desarrollo de software.</li>
+              <li>Base sólida en desarrollo web, aplicaciones móviles y manejo de datos para crear soluciones útiles.</li>
+              <li>Enfoque continuo en aprender tecnologías modernas y aplicarlas de forma práctica en proyectos concretos.</li>
             </ul>
           </div>
           <div>
             <h3>Experiencia</h3>
             <ul>
-              <li>Proyectos con .NET, Node.js, JavaScript, React y React Native</li>
-              <li>Desarrollo de sistemas para restaurantes, banca y peluquería</li>
-              <li>Práctica con Docker, Git, bases de datos y arquitectura básica</li>
+              <li>Desarrollo de aplicaciones con React, React Native, Node.js, .NET y Java Spring Boot.</li>
+              <li>Participación en proyectos para restaurantes, banca y peluquería, con énfasis en funcionalidad, organización y experiencia de usuario.</li>
+              <li>Práctica en integración de bases de datos, consumo de APIs, control de versiones con Git y uso de herramientas como Docker.</li>
+              <li>Enfoque en construir soluciones bien estructuradas, fáciles de mantener y preparadas para crecer con el negocio.</li>
             </ul>
           </div>
         </div>
