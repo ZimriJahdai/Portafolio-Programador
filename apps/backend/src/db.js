@@ -1,16 +1,31 @@
 import { MongoClient, ServerApiVersion } from 'mongodb';
 
-const uri = process.env.MONGODB_URI;
+const rawUri = process.env.MONGODB_URI;
 const dbName = process.env.MONGODB_DB || 'portafolio';
+
+function buildMongoUri(uri) {
+  if (!uri) return uri;
+  const hasQuery = uri.includes('?');
+  const params = [];
+
+  if (!/tls=/i.test(uri)) params.push('tls=true');
+  if (!/retryWrites=/i.test(uri)) params.push('retryWrites=true');
+  if (!/w=/i.test(uri)) params.push('w=majority');
+
+  if (params.length === 0) return uri;
+  return `${uri}${hasQuery ? '&' : '?'}${params.join('&')}`;
+}
 
 let client;
 let database;
 
 export async function connectToDatabase() {
-  if (!uri) {
+  if (!rawUri) {
     console.warn('[db] MONGODB_URI no esta configurada. Se continuara sin persistencia en MongoDB.');
     return null;
   }
+
+  const uri = buildMongoUri(rawUri);
 
   if (database) return database;
 
