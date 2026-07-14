@@ -1,6 +1,6 @@
 import { MongoClient, ServerApiVersion } from 'mongodb';
 
-const rawUri = process.env.MONGODB_URI;
+const rawUri = (process.env.MONGODB_URI || '').trim().replace(/^"|"$/g, '');
 const dbName = process.env.MONGODB_DB || 'portafolio';
 
 function buildMongoUri(uri) {

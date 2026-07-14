@@ -1,6 +1,11 @@
 FROM node:22-bookworm-slim AS base
 WORKDIR /app
 
+RUN apt-get update \
+	&& apt-get install -y --no-install-recommends ca-certificates \
+	&& update-ca-certificates \
+	&& rm -rf /var/lib/apt/lists/*
+
 COPY apps/backend/package*.json ./
 RUN npm ci --omit=dev
 
