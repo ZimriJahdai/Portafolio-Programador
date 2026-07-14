@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { transporter, MAIL_FROM } from '../mailer.js';
+import { logContactRecord } from '../db.js';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const OWNER_EMAIL = process.env.OWNER_EMAIL;
@@ -38,9 +39,25 @@ router.post('/contact', async (req, res) => {
       `,
     });
 
+    await logContactRecord({
+      name,
+      company: company || null,
+      email,
+      message,
+      status: 'sent',
+    });
+
     res.status(200).json({ message: 'Mensaje enviado correctamente.' });
   } catch (error) {
     console.error('[contact] Error al enviar el correo:', error);
+    await logContactRecord({
+      name,
+      company: company || null,
+      email,
+      message,
+      status: 'error',
+      error: error.message,
+    });
     res.status(502).json({ error: 'No se pudo enviar el mensaje. Intenta nuevamente más tarde.' });
   }
 });

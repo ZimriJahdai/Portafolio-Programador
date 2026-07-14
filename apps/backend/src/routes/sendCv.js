@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { transporter, MAIL_FROM } from '../mailer.js';
+import { logCvRecord } from '../db.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const CV_PATH = path.resolve(__dirname, '../../', process.env.CV_FILE_PATH || './assets/CV-Zimri-Lopez.pdf');
@@ -38,9 +39,21 @@ router.post('/send-cv', async (req, res) => {
       ],
     });
 
+    await logCvRecord({
+      email,
+      name: name || null,
+      status: 'sent',
+    });
+
     res.status(200).json({ message: 'CV enviado correctamente.' });
   } catch (error) {
     console.error('[send-cv] Error al enviar el correo:', error);
+    await logCvRecord({
+      email,
+      name: name || null,
+      status: 'error',
+      error: error.message,
+    });
     res.status(502).json({ error: 'No se pudo enviar el correo. Intenta nuevamente más tarde.' });
   }
 });

@@ -11,9 +11,10 @@ node_modules
 dist
 dist-ssr
 *.local
+.env
 
 # Backend env vars (contienen credenciales SMTP)
-server/.env
+apps/backend/.env
 
 # Editor directories and files
 .vscode/*

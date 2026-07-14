@@ -30,11 +30,16 @@ Pequeño servidor Express que da soporte a dos funciones desde [ContactPage.jsx]
 
 ## Frontend
 
-El frontend llama al backend usando `VITE_API_URL` (por defecto `http://localhost:4000/api`).
-Para producción, crea un `.env` en la raíz del proyecto con:
+El frontend llama al backend usando `VITE_API_URL`.
+
+- En Docker (Nginx + reverse proxy): por defecto usa `/api`.
+- En Vite dev: se recomienda proxy por `vite.config.js`.
+
+Para frontend y backend en dominios diferentes, define en frontend:
 
 ```
 VITE_API_URL=https://tu-backend-en-produccion.com/api
 ```
 
-Y en el backend, define `CLIENT_ORIGIN` con la URL pública del frontend para restringir CORS.
+Y en el backend, define `CLIENT_ORIGIN` con la URL publica del frontend para restringir CORS.
+Tambien puedes enviar mas de un origen separado por comas.
