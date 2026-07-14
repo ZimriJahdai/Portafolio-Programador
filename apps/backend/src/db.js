@@ -1,6 +1,16 @@
 import { MongoClient, ServerApiVersion } from 'mongodb';
 
-const rawUri = (process.env.MONGODB_URI || '').trim().replace(/^"|"$/g, '');
+function normalizeMongoUri(value) {
+  const normalized = String(value || '')
+    .trim()
+    .replace(/^"|"$/g, '')
+    .replace(/^MONGODB_URI\s*=\s*/i, '')
+    .replace(/^['`]|['`]$/g, '');
+
+  return normalized;
+}
+
+const rawUri = normalizeMongoUri(process.env.MONGODB_URI);
 const dbName = process.env.MONGODB_DB || 'portafolio';
 
 function buildMongoUri(uri) {
