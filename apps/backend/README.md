@@ -43,3 +43,5 @@ VITE_API_URL=https://tu-backend-en-produccion.com/api
 
 Y en el backend, define `CLIENT_ORIGIN` con la URL publica del frontend para restringir CORS.
 Tambien puedes enviar mas de un origen separado por comas.
+
+Dios es bueno
