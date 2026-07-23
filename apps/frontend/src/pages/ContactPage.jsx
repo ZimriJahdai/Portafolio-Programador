@@ -7,6 +7,20 @@ const API_URL = import.meta.env.VITE_API_URL || '/api';
 
 const initialContactForm = { name: '', company: '', email: '', message: '' };
 
+async function readApiResponse(response, fallbackMessage) {
+  const body = await response.text();
+
+  if (!body) {
+    return { error: response.ok ? '' : fallbackMessage };
+  }
+
+  try {
+    return JSON.parse(body);
+  } catch {
+    return { error: fallbackMessage };
+  }
+}
+
 export default function ContactPage() {
   const [activeImage, setActiveImage] = useState(null);
 
@@ -26,7 +40,7 @@ export default function ContactPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: cvEmail }),
       });
-      const data = await response.json();
+      const data = await readApiResponse(response, 'El servidor no pudo enviar el CV. Revisa la configuración del correo.');
 
       if (!response.ok) throw new Error(data.error || 'No se pudo enviar el CV.');
 
@@ -47,7 +61,7 @@ export default function ContactPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(contactForm),
       });
-      const data = await response.json();
+      const data = await readApiResponse(response, 'El servidor no pudo enviar el mensaje. Revisa la configuración del correo.');
 
       if (!response.ok) throw new Error(data.error || 'No se pudo enviar tu mensaje.');
 
