@@ -88,7 +88,7 @@ main { display: flex; flex-direction: column; gap: 18px; }
 .mini-card h3 { margin-bottom: 4px; }
 .icon { color: #67e8f9; font-size: 1.4rem; }
 
-.timeline-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.timeline-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
 .timeline-grid ul { margin: 0; padding-left: 18px; color: #dbeafe; }
 
 .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
@@ -98,7 +98,7 @@ main { display: flex; flex-direction: column; gap: 18px; }
 .project-card.salon { background: linear-gradient(145deg, rgba(14, 165, 233, 0.2), rgba(17, 24, 39, 0.98)); }
 .project-image, .project-thumb { width: 100%; border-radius: 16px; object-fit: cover; border: 1px solid rgba(148, 163, 184, 0.12); }
 .project-image { max-height: 180px; cursor: zoom-in; }
-.project-thumb { max-height: 110px; cursor: zoom-in; }
+.project-thumb { height: auto; max-height: none; object-fit: contain; cursor: zoom-in; }
 .project-content { display: flex; flex-direction: column; gap: 8px; }
 .image-button { background: transparent; border: none; padding: 0; text-align: left; cursor: zoom-in; }
 .image-button.thumb-button { width: 100%; }

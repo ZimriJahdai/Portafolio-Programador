@@ -48,6 +48,14 @@ export default function AboutPage() {
               <div className="bar-track"><div className="bar-fill" style={{ width: skill.percent }} /></div>
             </div>
           ))}
+          <div className="skill-card">
+            <div className="skill-row"><strong>IDEs</strong></div>
+            <p>Visual Studio Code, Android Studio, IntelliJ IDEA, Postman y NetBeans.</p>
+          </div>
+          <div className="skill-card">
+            <div className="skill-row"><strong>Versionamiento</strong></div>
+            <p>Git</p>
+          </div>
         </div>
       </section>
 
