@@ -12,6 +12,8 @@ export const projects = [
     stack: ['React', 'Node.js', 'MongoDB', 'Tailwind'],
     image: gestorRestaurantes,
     secondaryImage: restaurante,
+    repoUrl: 'https://github.com/Narizaico-code/GestorRestaurantes-Movil.git',
+    liveUrl: 'https://gestor-restaurantes-frontend.vercel.app/',
     accent: 'restaurant',
   },
   {
@@ -20,6 +22,8 @@ export const projects = [
     stack: ['.NET', 'MongoDB', 'React'],
     image: gestorBancario,
     secondaryImage: banco,
+    repoUrl: 'https://github.com/ValladaresCode/Bancario-Movil.git',
+    liveUrl: 'https://banco-movil.up.railway.app',
     accent: 'bank',
   },
   {
@@ -28,6 +32,7 @@ export const projects = [
     stack: ['React Native', 'Node.js', 'MongoDB'],
     image: gestorPeluqueria,
     secondaryImage: gestorPeluqueria2,
+    repoUrl: 'https://github.com/ZimriJahdai/HaircutFiveFriends-Full.git',
     accent: 'salon',
   },
 ];

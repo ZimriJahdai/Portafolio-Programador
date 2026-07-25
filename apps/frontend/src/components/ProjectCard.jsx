@@ -17,6 +17,18 @@ export default function ProjectCard({ project }) {
           <div className="stack-tags">
             {project.stack.map((item) => <span key={item}>{item}</span>)}
           </div>
+          <div className="project-links">
+            {project.repoUrl ? (
+              <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" className="project-link">
+                Ver repositorio
+              </a>
+            ) : null}
+            {project.liveUrl ? (
+              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="project-link">
+                Ver demo
+              </a>
+            ) : null}
+          </div>
           {project.secondaryImage ? (
             <button className="image-button thumb-button" onClick={() => setActiveImage(project.secondaryImage)}>
               <img src={project.secondaryImage} alt={`${project.title} vista adicional`} className="project-thumb" />

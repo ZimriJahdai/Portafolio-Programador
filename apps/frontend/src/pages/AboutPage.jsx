@@ -1,3 +1,4 @@
+import desarrollandoImage from '../assets/Desarrollando.png';
 import { FaCode, FaLaptopCode, FaMobileAlt, FaServer } from 'react-icons/fa';
 import { MdContactMail, MdSchool, MdWork } from 'react-icons/md';
 
@@ -17,24 +18,29 @@ const skills = [
 export default function AboutPage() {
   return (
     <>
-      <section className="card">
-        <p className="eyebrow">Acerca de mí</p>
-        <h2>Diseño soluciones modernas con enfoque real.</h2>
-        <p>Me apasiona crear plataformas que combinan buen diseño, rendimiento y utilidad. Desde interfaces claras hasta APIs y bases de datos, busco que cada proyecto sea funcional, escalable y fácil de mantener.</p>
+      <section className="card about-hero">
+        <div className="about-hero-content">
+          <p className="eyebrow">Acerca de mí</p>
+          <h2>Construyo aplicaciones que resuelven problemas reales.</h2>
+          <p>Soy desarrollador full-stack con experiencia práctica en React, Node.js, Java Spring Boot y .NET. Mi trabajo se centra en entregar proyectos usables, confiables y fáciles de escalar, con código limpio y resultados medibles para el usuario y el negocio.</p>
+        </div>
+        <div className="about-hero-image">
+          <img src={desarrollandoImage} alt="Desarrollando" />
+        </div>
       </section>
 
       <section className="grid-2">
         <article className="card info-grid">
           <div className="info-pill"><MdContactMail /> <strong>Teléfono:</strong> 3697-1792</div>
           <div className="info-pill"><MdSchool /> <strong>Educación:</strong> 6to Perito en Informática</div>
-          <div className="info-pill"><FaLaptopCode /> <strong>Experiencia:</strong> 3 años relacionados con programación</div>
-          <div className="info-pill"><MdWork /> <strong>Enfoque:</strong> Frontend, backend y desarrollo móvil</div>
+          <div className="info-pill"><FaLaptopCode /> <strong>Experiencia:</strong> 3 años entregando soluciones web y móviles.</div>
+          <div className="info-pill"><MdWork /> <strong>Enfoque:</strong> entregar productos funcionales, fáciles de mantener y listos para crecer.</div>
         </article>
 
         <article className="card">
           <p className="eyebrow">Perfil</p>
-          <h3>Lo que puedo aportar</h3>
-          <p>Construyo soluciones con orden, lógica y estética. Mi objetivo es convertir ideas en herramientas útiles para empresas, negocios y usuarios finales.</p>
+          <h3>Lo que ofrezco</h3>
+          <p>Aplico metodologías prácticas para convertir requerimientos en aplicaciones concretas: interfaces claras, APIs estables y despliegues operativos. Priorizar la usabilidad y el mantenimiento es mi forma de asegurar que cada proyecto genere valor real.</p>
         </article>
       </section>
 

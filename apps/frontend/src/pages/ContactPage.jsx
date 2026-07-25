@@ -92,6 +92,11 @@ export default function ContactPage() {
         </div>
 
         <p className="small-note">Al abrir cualquiera de estas imágenes podrás verla completa para revisar tu perfil de contacto.</p>
+        <div className="contact-actions">
+          <a href="https://github.com/ZimriJahdai" target="_blank" rel="noopener noreferrer" className="button primary">
+            Ver mi GitHub
+          </a>
+        </div>
       </section>
 
       <div className="grid-2">
