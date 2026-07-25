@@ -32,6 +32,7 @@ export default function AboutPage() {
       <section className="grid-2">
         <article className="card info-grid">
           <div className="info-pill"><MdContactMail /> <strong>Teléfono:</strong> 3697-1792</div>
+          <div className="info-pill"><MdContactMail /> <strong>Correo:</strong> <a href="mailto:zimrilopez2006@gmail.com">zimrilopez2006@gmail.com</a></div>
           <div className="info-pill"><MdSchool /> <strong>Educación:</strong> 6to Perito en Informática</div>
           <div className="info-pill"><FaLaptopCode /> <strong>Experiencia:</strong> 3 años entregando soluciones web y móviles.</div>
           <div className="info-pill"><MdWork /> <strong>Enfoque:</strong> entregar productos funcionales, fáciles de mantener y listos para crecer.</div>
