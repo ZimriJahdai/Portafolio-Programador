@@ -1,7 +1,7 @@
 import gestorRestaurantes from '../assets/GestorRestaurantes.png';
 import gestorBancario from '../assets/GestorBancario.png';
-import gestorPeluqueria from '../assets/GestorPeluqueria.png';
-import gestorPeluqueria2 from '../assets/GestorPeluqueria2.png';
+import peluqueria from '../assets/Peluqueria.png';
+import peluqueriaMovil from '../assets/Peluqueria Movil.png';
 import restaurante from '../assets/Restaurante.png';
 import banco from '../assets/Banco.png';
 
@@ -30,8 +30,8 @@ export const projects = [
     title: 'Gestor de peluquería',
     description: 'Panel para agendamiento, servicios y clientes, pensado para mejorar la experiencia del negocio y el personal.',
     stack: ['React Native', 'Node.js', 'MongoDB'],
-    image: gestorPeluqueria,
-    secondaryImage: gestorPeluqueria2,
+    image: peluqueria,
+    secondaryImage: peluqueriaMovil,
     repoUrl: 'https://github.com/ZimriJahdai/HaircutFiveFriends-Full.git',
     accent: 'salon',
   },
